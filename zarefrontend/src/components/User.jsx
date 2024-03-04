@@ -1,43 +1,99 @@
 import React, { useState } from 'react';
 
 function User() {
-  const [activeTab, setActiveTab] = useState('button1');
+  const [activeTab, setActiveTab] = useState('Offline');
+  const [name, setname] = useState("")
+  const [email, setemail] = useState("")
+  const [password, setpassword] = useState("")
+
+
+const form_submit = (e)=> {
+    e.preventDefault()
+    const user = {
+      name,
+      email,
+      password,
+    }
+    registration(user)
+}
+
+
+  const registration = async(user) =>  {
+    
+    let headersList = {
+      "Content-Type": "application/json"
+     }
+     
+     let bodyContent = JSON.stringify({
+     
+         "username" :user.username,
+         "email" : user.email,
+         "password" : user.password,
+         "mode" : user.mode,
+        
+     }
+     
+     
+        );
+     
+     let response = await fetch("https://movie-lists-x2e8.onrender.com/user/register", { 
+       method: "POST",
+       body: bodyContent,
+       headers: headersList
+     });
+     
+     let data = await response.text();
+     console.log(data);
+     if (data) {
+      alert('user registered successfull')
+    }
+     
+  }
+
+
+
+
+
+
+
+
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
   };
 
+
   return (
     <div className="signup_form">
       <div className="tab-buttons">
         <button
-          className={activeTab === 'button1' ? 'active' : ''}
-          onClick={() => handleTabClick('button1')}
+          className={activeTab === 'Offline' ? 'active' : ''}
+          onClick={() => handleTabClick('Offline')}
         >
-          Button 1
+          Offline
         </button>
         <button
-          className={activeTab === 'button2' ? 'active' : ''}
-          onClick={() => handleTabClick('button2')}
+          className={activeTab === 'Online' ? 'active' : ''}
+          onClick={() => handleTabClick('Online')}
         >
-          Button 2
+         Online
         </button>
         <button
-          className={activeTab === 'button3' ? 'active' : ''}
-          onClick={() => handleTabClick('button3')}
+          className={activeTab === 'Hybrid' ? 'active' : ''}
+          onClick={() => handleTabClick('Hybrid')}
         >
-          Button 3
+        Hybrid
         </button>
       </div>
-      <form className={activeTab === 'button1' ? 'content' : activeTab === 'button2' ? 'content2' : 'content3'}>
+      <form onSubmit={(e)=> form_submit(e)} className={activeTab === 'Offline' ? 'form1' : activeTab === 'Online' ? 'form2' : 'form3'}>
         <h3>Signup</h3>
         <label htmlFor="">Username</label>
-        <input type="text" placeholder="Username" />
+        <input onChange={(e)=> setname(e.target.value)} className={activeTab === 'Offline' ? 'input1' : activeTab === 'Online' ? 'input2' : 'input3'} type="text" placeholder="Username" />
         <label htmlFor="">Email</label>
-        <input type="text" placeholder="email" />
+        <input onChange={(e)=> setemail(e.target.value)}   className={activeTab === 'Offline' ? 'input1' : activeTab === 'Online' ? 'input2' : 'input3'} type="text" placeholder="email" />
         <label htmlFor="">Password</label>
-        <input type="text" placeholder="password" />
-        <button className="btn" type="submit">
+        <input onChange={(e)=> setpassword(e.target.value)} className={activeTab === 'Offline' ? 'input1' : activeTab === 'Online' ? 'input2' : 'input3'} type="text" placeholder="password" />
+        <button className={activeTab === 'Offline' ? 'btn1' : activeTab === 'Online' ? 'btn2' : 'btn3'} type="submit">
           Signup
         </button>
         <div>
