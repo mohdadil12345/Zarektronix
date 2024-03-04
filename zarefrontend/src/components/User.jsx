@@ -46,7 +46,7 @@ const form_submit = (e)=> {
        headers: headersList
      });
      
-     let data = await response.text();
+     let data = await response.json();
      console.log(data);
      if (data) {
       alert('user registered successfull')
