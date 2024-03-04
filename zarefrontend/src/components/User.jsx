@@ -46,7 +46,7 @@ useEffect(() => {
      
         );
      
-     let response = await fetch("https://zarektronix-1.onrender.com/users/register", { 
+     let response = await fetch("https://zarektronix-1.onrender.com/register", { 
        method: "POST",
        body: bodyContent,
        headers: headersList
