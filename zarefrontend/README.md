@@ -29,7 +29,7 @@ Zarektronix is a assignment for the user signup
 ![Screenshot 2](src\assets\pic-2.png)
 ![Screenshot 3](src\assets\pic-3.png)
 ![Screenshot 4](src\assets\pic-4.png)
-![Screenshot 4](src\assets\pic-6.png)
+![Screenshot 5](src\assets\pic-6.png)
 
 
 ## Deployment
