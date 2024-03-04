@@ -137,8 +137,8 @@ useEffect(() => {
           Signup
         </button>
         <div>
-          <button className="google">Google</button>
-          <button className="facebook">Facebook</button>
+          <button className={activeTab === 'Offline' ? 'google1' : activeTab === 'Online' ? 'google2' : 'google3'}>Google</button>
+          <button className={activeTab === 'Offline' ? 'facebook1' : activeTab === 'Online' ? 'facebook2' : 'facebook3'}>Facebook</button>
         </div>
       </form>
     
