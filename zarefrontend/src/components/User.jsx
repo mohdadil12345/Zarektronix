@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 function User() {
   const [activeTab, setActiveTab] = useState('Offline');
   const [name, setname] = useState("")
   const [email, setemail] = useState("")
   const [password, setpassword] = useState("")
-  const [mode, setmode] = useState("")
+  const [mode, setmode] = useState(activeTab)
 
 
 
@@ -21,6 +21,11 @@ const form_submit = (e)=> {
     registration(user)
 }
 
+useEffect(() => {
+  setmode(activeTab); 
+}, [activeTab]); 
+
+
 
   const registration = async(user) =>  {
     
@@ -30,7 +35,7 @@ const form_submit = (e)=> {
      
      let bodyContent = JSON.stringify({
      
-         "username" :user.username,
+         "name" :user.name,
          "email" : user.email,
          "password" : user.password,
          "mode" : user.mode,
@@ -97,6 +102,8 @@ const form_submit = (e)=> {
         <input onChange={(e)=> setemail(e.target.value)}   className={activeTab === 'Offline' ? 'input1' : activeTab === 'Online' ? 'input2' : 'input3'} type="text" placeholder="email" />
         <label htmlFor="">Password</label>
         <input onChange={(e)=> setpassword(e.target.value)} className={activeTab === 'Offline' ? 'input1' : activeTab === 'Online' ? 'input2' : 'input3'} type="text" placeholder="password" />
+        <label htmlFor="">Mode</label>
+        <input className={activeTab === 'Offline' ? 'input1' : activeTab === 'Online' ? 'input2' : 'input3'} value={mode} readOnly type="text" />
         <button className={activeTab === 'Offline' ? 'btn1' : activeTab === 'Online' ? 'btn2' : 'btn3'} type="submit">
           Signup
         </button>
