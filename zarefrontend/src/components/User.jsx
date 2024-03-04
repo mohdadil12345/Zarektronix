@@ -5,6 +5,8 @@ function User() {
   const [name, setname] = useState("")
   const [email, setemail] = useState("")
   const [password, setpassword] = useState("")
+  const [mode, setmode] = useState("")
+
 
 
 const form_submit = (e)=> {
@@ -13,6 +15,8 @@ const form_submit = (e)=> {
       name,
       email,
       password,
+      mode
+    
     }
     registration(user)
 }
@@ -36,7 +40,7 @@ const form_submit = (e)=> {
      
         );
      
-     let response = await fetch("https://movie-lists-x2e8.onrender.com/user/register", { 
+     let response = await fetch("https://zarektronix-1.onrender.com/users/register", { 
        method: "POST",
        body: bodyContent,
        headers: headersList
@@ -86,7 +90,7 @@ const form_submit = (e)=> {
         </button>
       </div>
       <form onSubmit={(e)=> form_submit(e)} className={activeTab === 'Offline' ? 'form1' : activeTab === 'Online' ? 'form2' : 'form3'}>
-        <h3>Signup</h3>
+        <h3 className={activeTab === 'Offline' ? 'h1' : activeTab === 'Online' ? 'h2' : 'h3'}>Signup</h3>
         <label htmlFor="">Username</label>
         <input onChange={(e)=> setname(e.target.value)} className={activeTab === 'Offline' ? 'input1' : activeTab === 'Online' ? 'input2' : 'input3'} type="text" placeholder="Username" />
         <label htmlFor="">Email</label>

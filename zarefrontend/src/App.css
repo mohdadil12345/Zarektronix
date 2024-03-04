@@ -23,16 +23,36 @@ button {
 }
 
 
-
+/* 
 .signup_form form h3 {
   margin-bottom: 20px;
   color: #893dff;
   font-size: 20px;
   text-align: center;
 
+} */
+
+
+.h1{
+  margin-bottom: 20px;
+  font-size: 20px;
+  text-align: center;
+
 }
+.h2{
+  margin-bottom: 20px;
+  color: tomato;
+  font-size: 20px;
+  text-align: center;
 
+}
+.h3{
+  margin-bottom: 20px;
+  color: #893dff;
+  font-size: 20px;
+  text-align: center;
 
+}
 
 
 
@@ -63,6 +83,7 @@ button {
   font-size: 18px;
   font-style: normal;
   padding: 16px;
+  margin-right: 5px;
 }
 .signup_form .facebook {
   width: 49%;
@@ -101,7 +122,7 @@ button {
   margin: 40px auto;
   height: 100%;
   justify-content: space-between;
-border: 1px solid rgb(243, 238, 238); 
+  border: 1px solid rgb(0, 0, 0);
 }
 
 .form2 {
@@ -113,8 +134,9 @@ border: 1px solid rgb(243, 238, 238);
   margin: 40px auto;
   height: 100%;
   justify-content: space-between;
-  border: 1px solid rgb(0, 0, 0);
+ 
   border-radius: 8px;
+  border: 1px solid rgb(243, 238, 238); 
 }
 
 .form3 {
@@ -188,3 +210,5 @@ border: 1px solid rgb(243, 238, 238);
   color: white;
   padding: 16px;
 }
+
+
