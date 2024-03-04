@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import toast from 'react-hot-toast';
 
 function User() {
   const [activeTab, setActiveTab] = useState('Offline');
@@ -54,7 +55,26 @@ useEffect(() => {
      let data = await response.json();
      console.log(data);
      if (data) {
-      alert('user registered successfull')
+      toast.success("Signup Successfully", {
+        style: {
+          borderRadius: "50px",
+          background: "#000428",
+          color: "#ffffff",
+          padding: "30px",
+          fontWeight: "600",
+        },
+      });
+  
+    } else {
+      toast.error("wrong credential", {
+        style: {
+          borderRadius: "50px",
+          background: "#000428",
+          color: "#ffffff",
+          padding: "1rem 1.5rem",
+          fontWeight: "600",
+        },
+      });
     }
      
   }
@@ -99,7 +119,7 @@ useEffect(() => {
         <label htmlFor="">Username</label>
         <input onChange={(e)=> setname(e.target.value)} className={activeTab === 'Offline' ? 'input1' : activeTab === 'Online' ? 'input2' : 'input3'} type="text" placeholder="Username" />
         <label htmlFor="">Email</label>
-        <input onChange={(e)=> setemail(e.target.value)}   className={activeTab === 'Offline' ? 'input1' : activeTab === 'Online' ? 'input2' : 'input3'} type="text" placeholder="email" />
+        <input onChange={(e)=> setemail(e.target.value)}   className={activeTab === 'Offline' ? 'input1' : activeTab === 'Online' ? 'input2' : 'input3'} type="email" placeholder="email" />
         <label htmlFor="">Password</label>
         <input onChange={(e)=> setpassword(e.target.value)} className={activeTab === 'Offline' ? 'input1' : activeTab === 'Online' ? 'input2' : 'input3'} type="text" placeholder="password" />
         <label htmlFor="">Mode</label>
