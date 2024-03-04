@@ -25,11 +25,12 @@ Zarektronix is a assignment for the user signup
 
 ## Screenshots
 
-![Screenshot 1](src\assets\pic-1.png)
-![Screenshot 2](src\assets\pic-2.png)
-![Screenshot 3](src\assets\pic-3.png)
-![Screenshot 4](src\assets\pic-4.png)
-![Screenshot 5](src\assets\pic-6.png)
+![Screenshot 1](../zarefrontend/src/assets/pic-3.png)
+![Screenshot 2](../zarefrontend/src/assets/pic-2.png)
+![Screenshot 3](../zarefrontend/src/assets/pic-1.png)
+![Screenshot 4](../zarefrontend/src/assets/pic-6.png)
+![Screenshot 5](../zarefrontend/src/assets/pic-4.png)
+
 
 
 ## Deployment
