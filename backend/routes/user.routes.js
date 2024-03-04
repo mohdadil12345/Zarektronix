@@ -42,6 +42,18 @@ const bcrypt = require("bcrypt")
     })
     
 
+// get 
+userRouter.get("/", async (req, res) => {
+        try {
+            const data = await UserModel.find()
+    
+            res.status(200).send(data)
+    
+        } catch (error) {
+            res.status(400).json({ error: error.message })
+        }
+    })
+
 
 
 module.exports = {
