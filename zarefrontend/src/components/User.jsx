@@ -54,7 +54,7 @@ useEffect(() => {
      
      let data = await response.json();
      console.log(data);
-     if (data) {
+     if (response.status === 200) {
       toast.success("Signup Successfully", {
         style: {
           borderRadius: "50px",
@@ -63,10 +63,9 @@ useEffect(() => {
           padding: "30px",
           fontWeight: "600",
         },
-      });
-  
-    } else {
-      toast.error("wrong credential", {
+      })
+    } else if (response.status === 400) {
+      toast.error("User already registered with this email", {
         style: {
           borderRadius: "50px",
           background: "#000428",
@@ -74,7 +73,17 @@ useEffect(() => {
           padding: "1rem 1.5rem",
           fontWeight: "600",
         },
-      });
+      })
+    } else {
+      toast.error("Error occurred. Please try again later.", {
+        style: {
+          borderRadius: "50px",
+          background: "#000428",
+          color: "#ffffff",
+          padding: "1rem 1.5rem",
+          fontWeight: "600",
+        },
+      })
     }
      
   }
