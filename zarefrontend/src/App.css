@@ -23,7 +23,7 @@ button {
 }
 
 
-.signup_form form {
+.content {
   display: flex;
   gap: 10px;
   flex-direction: column;
@@ -49,7 +49,7 @@ button {
   outline: none;
 }
 
-.signup_form button {
+.btn{
   padding: 8px 16px;
   border-radius: 4px;
   border: none;
@@ -61,6 +61,11 @@ button {
   color: white;
   padding: 16px;
 }
+
+
+
+
+
 .bcg {
   width: 100%;
   height: 100%;
@@ -85,8 +90,13 @@ button {
   width: 49%;
   border-radius: 8px;
   border: 2px solid #a01107;
-  background: #fff;
   color: #a01107;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 18px;
+  font-style: normal;
+  padding: 16px;
 }
 .signup_form .facebook {
   width: 49%;
@@ -94,4 +104,49 @@ button {
   border: 2px solid #11427C;
   background: #fff;
   color: #11427C;
+  font-weight: 600;
+  font-size: 18px;
+  font-style: normal;
+  padding: 16px;
 }
+
+.tab-buttons button {
+  background-color: #f0f0f0;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+}
+.tab-buttons button.active {
+  background-color: tomato;
+  border-radius: 4px;
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+
+.content2 {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  width: 400px;
+  padding: 50px;
+  margin: 40px auto;
+  height: 100%;
+  justify-content: space-between;
+  border: 1px solid red;
+}
+
+.content3 {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  width: 400px;
+  padding: 20px;
+  margin: 40px auto;
+  height: 100%;
+  justify-content: space-between;
+  border: 1px solid rgb(0, 0, 0);
+}
+
