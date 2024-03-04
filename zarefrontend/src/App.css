@@ -1,0 +1,97 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+.signup_form {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  padding: 100px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.signup_form form {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  width: 400px;
+  padding: 50px;
+  margin: 40px auto;
+  background-color: rgba(13, 113, 133);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 2px 2px 10px rgba(45, 36, 36, 0.3);
+  height: 100%;
+  justify-content: space-between;
+}
+.signup_form form h3 {
+  margin-bottom: 20px;
+}
+
+.signup_form input {
+  border: none;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 1px 1px 4px rgba(45, 36, 36, 0.3);
+  outline: none;
+}
+
+.signup_form button {
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: none;
+  font-weight: 600;
+  font-size: 18px;
+  font-style: normal;
+  border-radius: 8px;
+  background: #893dff;
+  color: white;
+  padding: 16px;
+}
+.bcg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.imgg {
+  height: 100%;
+  position: relative;
+  width: 500px;
+}
+.imgg img {
+  object-position: bottom;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.signup_form .google {
+  width: 49%;
+  border-radius: 8px;
+  border: 2px solid #a01107;
+  background: #fff;
+  color: #a01107;
+}
+.signup_form .facebook {
+  width: 49%;
+  border-radius: 8px;
+  border: 2px solid #11427C;
+  background: #fff;
+  color: #11427C;
+}
