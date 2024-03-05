@@ -26,7 +26,7 @@ button {
 
 }
 .h2{
-  color: tomato;
+  color: white;
   font-size: 20px;
   text-align: center;
 
@@ -35,13 +35,12 @@ button {
 
   font-size: 20px;
   text-align: center;
-
+  color: tomato;
 }
 
 
 .google1{
   width: 49%;
-  border-radius: 8px;
   padding: 8px 16px;
   font-weight: 600;
   font-size: 18px;
@@ -49,6 +48,9 @@ button {
   padding: 16px;
   margin-right: 5px;
   border: none;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 .google2, .google3 {
   width: 49%;
@@ -56,16 +58,19 @@ button {
   border: 2px solid #a01107;
   color: #a01107;
   padding: 8px 16px;
-  border-radius: 4px;
+  border-radius: 8px;
   font-weight: 600;
   font-size: 18px;
   font-style: normal;
   padding: 16px;
   margin-right: 5px;
+  background-color: white;
 }
 .facebook1{
   width: 49%;
-  border-radius: 8px;
+  background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   font-weight: 600;
   font-size: 18px;
   font-style: normal;
@@ -108,10 +113,12 @@ button {
   padding: 30px 40px;
   margin: 30px auto;
   justify-content: space-between;
-  border: 0.1px solid rgb(0, 0, 0);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 8px;
+
 }
 
-.form3 {
+.form2 {
   display: flex;
   gap: 10px;
   flex-direction: column;
@@ -125,7 +132,9 @@ button {
 
 }
 
-.form2 {
+
+
+.form3 {
   border: 1px solid rgb(214, 138, 138);
 
   display: flex;
@@ -139,19 +148,23 @@ button {
   background: #fff;
   box-shadow: 2px 2px 10px rgba(45, 36, 36, 0.3);
   justify-content: space-between;
+  transition: .5s;
 }
 
 .input1 {
   padding: 16px;
-  border: 0.1px solid grey;
+  box-shadow: rgba(149, 154, 159, 0.2) 0px 8px 24px;
+  border: none;
 
 }
 .input2 {
+  background: #fff;
+  border: none;
   border-radius: 8px;
+  box-shadow: 0 0 20px #eee;
+  font-size: .75rem;
   padding: 16px;
-  border: 1px solid rgb(214, 138, 138);
-  box-shadow: 1px 1px 4px rgba(45, 36, 36, 0.3);
-  outline: none;
+  width: 100%;
   
 }
 .input3 {
@@ -162,12 +175,16 @@ button {
   font-size: .75rem;
   padding: 16px;
   width: 100%;
+  border: 1px solid rgb(214, 138, 138);
+  box-shadow: 1px 1px 4px rgba(45, 36, 36, 0.3);
 }
 
 
 .btn1{
   padding: 8px 16px;
-  border-radius: 4px;
+  border-radius: 8px;
+  background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   border: none;
   font-weight: 600;
   font-size: 18px;
@@ -176,7 +193,11 @@ button {
   color: black;
   padding: 16px;
 }
-.btn2{
+.btn1:hover{
+   background-color: rgb(49, 48, 48);
+   color: white;
+}
+.btn3{
   padding: 8px 16px;
   border-radius: 4px;
   border: none;
@@ -188,7 +209,8 @@ button {
   color: white;
   padding: 16px;
 }
-.btn3{
+
+.btn2{
 background-image: linear-gradient(90deg, #232526 0, #414345 51%, #232526);
     background-size: 200% auto;
     border-radius: 10px;
@@ -202,17 +224,6 @@ background-image: linear-gradient(90deg, #232526 0, #414345 51%, #232526);
     transition: .5s;
 }
 
-
-.bcg1{
-  background-color: black;
-}
-.bcg1{
-background-color: tomato;
-}
-.bcg1{
-  background-color: yellow;
-
-}
 
 
 
