@@ -20,6 +20,7 @@ const form_submit = (e)=> {
     
     }
     registration(user)
+ 
 }
 
 useEffect(() => {
