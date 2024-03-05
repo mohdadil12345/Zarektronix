@@ -59,8 +59,16 @@ const form_submit = (e) => {
   } else {
    
     let offlineUsers = JSON.parse(localStorage.getItem('offlineUsers')) || [];
-    offlineUsers.push(user);
-    localStorage.setItem('offlineUsers', JSON.stringify(offlineUsers));
+
+if(offlineUsers){
+  offlineUsers.push(user);
+  localStorage.setItem('offlineUsers', JSON.stringify(offlineUsers));
+}else{
+  localStorage.setItem('offlineUsers', JSON.stringify([user]));
+
+}
+
+    
 
     
     toast.success("Signup data saved offline. Will be submitted when online.", {
