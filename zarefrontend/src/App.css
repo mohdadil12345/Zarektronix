@@ -65,6 +65,7 @@ button {
   padding: 16px;
   margin-right: 5px;
   background-color: white;
+  transition: 0.5s;
 }
 .facebook1{
   width: 49%;
@@ -87,6 +88,7 @@ button {
   font-size: 18px;
   font-style: normal;
   padding: 16px;
+  transition: 0.5s;
 }
 
 .tab-buttons button {
@@ -183,9 +185,10 @@ button {
 .input3::placeholder {
   color: tomato;
 }
-.input-text {
-  color: #9d1212; /* Default text color */
+.input2::placeholder {
+  color: black;
 }
+
 
 
 .btn1{
@@ -202,6 +205,10 @@ button {
   padding: 16px;
 }
 .btn1:hover{
+   background-color: rgb(49, 48, 48);
+   color: white;
+}
+.btn3:hover{
    background-color: rgb(49, 48, 48);
    color: white;
 }
