@@ -153,11 +153,11 @@ const registration = async (user) => {
       <form onSubmit={(e)=> form_submit(e)} className={activeTab === 'Offline' ? 'form1' : activeTab === 'Online' ? 'form2' : 'form3'}>
         <h3 className={activeTab === 'Offline' ? 'h1' : activeTab === 'Online' ? 'h2' : 'h3'}>Signup</h3>
         <label htmlFor="">Username</label>
-        <input onChange={(e)=> setname(e.target.value)} className={activeTab === 'Offline' ? 'input1' : activeTab === 'Online' ? 'input2' : 'input3'} type="text" placeholder="Username" />
+        <input required onChange={(e)=> setname(e.target.value)} className={activeTab === 'Offline' ? 'input1' : activeTab === 'Online' ? 'input2' : 'input3'} type="text" placeholder="Username" />
         <label htmlFor="">Email</label>
-        <input onChange={(e)=> setemail(e.target.value)}   className={activeTab === 'Offline' ? 'input1' : activeTab === 'Online' ? 'input2' : 'input3'} type="email" placeholder="email" />
+        <input required onChange={(e)=> setemail(e.target.value)}   className={activeTab === 'Offline' ? 'input1' : activeTab === 'Online' ? 'input2' : 'input3'} type="email" placeholder="email" />
         <label htmlFor="">Password</label>
-        <input onChange={(e)=> setpassword(e.target.value)} className={activeTab === 'Offline' ? 'input1' : activeTab === 'Online' ? 'input2' : 'input3'} type="text" placeholder="password" />
+        <input required onChange={(e)=> setpassword(e.target.value)} className={activeTab === 'Offline' ? 'input1' : activeTab === 'Online' ? 'input2' : 'input3'} type="text" placeholder="password" />
         <label htmlFor="">Mode</label>
         <input className={activeTab === 'Offline' ? 'input1' : activeTab === 'Online' ? 'input2' : 'input3'} value={mode} readOnly type="text" />
         <button className={activeTab === 'Offline' ? 'btn1' : activeTab === 'Online' ? 'btn2' : 'btn3'} type="submit">
