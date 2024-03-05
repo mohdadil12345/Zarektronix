@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
+import useTimeout from '../hooks/useTimeout';
+import useOnlinestatus from '../hooks/useOnlinestatus';
 
 function User() {
   const [activeTab, setActiveTab] = useState('Offline');
@@ -8,89 +10,84 @@ function User() {
   const [password, setpassword] = useState("")
   const [mode, setmode] = useState(activeTab)
 
+  const { ready } = useTimeout(5000);
+  const isUserOnline = useOnlinestatus()
 
 
-const form_submit = (e)=> {
-    e.preventDefault()
-    const user = {
-      name,
-      email,
-      password,
-      mode
-    
-    }
-    registration(user)
- 
-}
 
 useEffect(() => {
-  setmode(activeTab); 
-}, [activeTab]); 
+  setmode(activeTab);
+}, [activeTab]);
 
+const form_submit = (e) => {
+  e.preventDefault();
+  const user = {
+    name,
+    email,
+    password,
+    mode
+  };
 
+  if (isUserOnline) {
+    registration(user);
 
-  const registration = async(user) =>  {
-    
-    let headersList = {
-      "Content-Type": "application/json"
-     }
-     
-     let bodyContent = JSON.stringify({
-     
-         "name" :user.name,
-         "email" : user.email,
-         "password" : user.password,
-         "mode" : user.mode,
-        
-     }
-     
-     
-        );
-     
-     let response = await fetch("https://zarektronix-1.onrender.com/register", { 
-       method: "POST",
-       body: bodyContent,
-       headers: headersList
-     });
-     
-     let data = await response.json();
-     console.log(data);
-     if (response.status === 200) {
-      toast.success("Signup Successfully", {
-        style: {
-          borderRadius: "50px",
-          background: "#000428",
-          color: "#ffffff",
-          padding: "30px",
-          fontWeight: "600",
-        },
-      })
-    } else if (response.status === 400) {
-      toast.error("User already registered with this email", {
-        style: {
-          borderRadius: "50px",
-          background: "#000428",
-          color: "#ffffff",
-          padding: "1rem 1.5rem",
-          fontWeight: "600",
-        },
-      })
-    } else {
-      toast.error("Error occurred. Please try again later.", {
-        style: {
-          borderRadius: "50px",
-          background: "#000428",
-          color: "#ffffff",
-          padding: "1rem 1.5rem",
-          fontWeight: "600",
-        },
-      })
-    }
-     
+  } else {
+   
+    localStorage.setItem('offlineUser', JSON.stringify(user));
+    toast.success("Signup data saved offline. Will be submitted when online.", {
+      style: {
+        borderRadius: "50px",
+        background: "#000428",
+        color: "#ffffff",
+        padding: "30px",
+        fontWeight: "600",
+      },
+    });
   }
+};
 
+const registration = async (user) => {
+  let headersList = {
+    "Content-Type": "application/json"
+  };
 
+  let bodyContent = JSON.stringify({
+    "name": user.name,
+    "email": user.email,
+    "password": user.password,
+    "mode": user.mode
+  });
+  
+  let response = await fetch("https://zarektronix-1.onrender.com/register", {
+    method: "POST",
+    body: bodyContent,
+    headers: headersList
+  });
 
+  let data = await response.json();
+  console.log(data);
+  if (response.ok) {
+      toast.success('Signup Successfully', {
+        style: {
+          borderRadius: '50px',
+          background: '#000428',
+          color: '#ffffff',
+          padding: '30px',
+          fontWeight: '600',
+        },
+      });
+  } else {
+    toast.error("user is already Registered", {
+      style: {
+        borderRadius: "50px",
+        background: "#000428",
+        color: "#ffffff",
+        padding: "1rem 1.5rem",
+        fontWeight: "600",
+      },
+    });
+  }
+};
 
 
 
@@ -104,6 +101,12 @@ useEffect(() => {
 
   return (
     <div className="signup_form">
+
+
+    
+{isUserOnline ? <div>Online 🟢</div> : <div >Offline 🔴</div> }
+      {ready == true && <div data-testid="timeout-div">After the timeout</div>}
+
       <div className="tab-buttons">
         <button
           className={activeTab === 'Offline' ? 'active' : ''}
