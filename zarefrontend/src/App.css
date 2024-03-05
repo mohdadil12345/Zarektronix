@@ -180,8 +180,11 @@ button {
   box-shadow: 1px 1px 4px rgba(45, 36, 36, 0.3);
   outline: none;
 }
-.input3 ::placeholder{
- background-color: red;
+.input3::placeholder {
+  color: tomato;
+}
+.input-text {
+  color: #9d1212; /* Default text color */
 }
 
 
