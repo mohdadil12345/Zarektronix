@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
-import useTimeout from '../hooks/useTimeout';
 import useOnlinestatus from '../hooks/useOnlinestatus';
 
 function User() {
@@ -10,14 +9,40 @@ function User() {
   const [password, setpassword] = useState("")
   const [mode, setmode] = useState(activeTab)
 
-  const { ready } = useTimeout(5000);
   const isUserOnline = useOnlinestatus()
+
 
 
 
 useEffect(() => {
   setmode(activeTab);
 }, [activeTab]);
+
+
+
+useEffect(() => {
+  if(isUserOnline) {
+    let lsdata = JSON.parse(localStorage.getItem('offlineUsers'))
+     
+  if(lsdata) {
+     for (let i = 0; i < lsdata.length; i++) {
+        
+    
+      // console.log("lsss", lsdata[i])
+
+      let  {name, email, password, mode} = lsdata[i]
+      
+        registration( {name, email, password, mode})
+        if( i == lsdata.length-1) {
+
+          localStorage.removeItem("offlineUsers")
+        }
+     }
+  }
+
+  }
+
+}, [isUserOnline]);
 
 const form_submit = (e) => {
   e.preventDefault();
@@ -33,7 +58,9 @@ const form_submit = (e) => {
 
   } else {
    
-    localStorage.setItem('offlineUser', JSON.stringify(user));
+    let offlineUsers = JSON.parse(localStorage.getItem('offlineUsers')) || [];
+    offlineUsers.push(user);
+    localStorage.setItem('offlineUsers', JSON.stringify(offlineUsers));
     toast.success("Signup data saved offline. Will be submitted when online.", {
       style: {
         borderRadius: "50px",
@@ -91,9 +118,6 @@ const registration = async (user) => {
 
 
 
-
-
-
   const handleTabClick = (tab) => {
     setActiveTab(tab);
   };
@@ -105,7 +129,6 @@ const registration = async (user) => {
 
     
 {isUserOnline ? <div>Online 🟢</div> : <div >Offline 🔴</div> }
-      {ready == true && <div data-testid="timeout-div">After the timeout</div>}
 
       <div className="tab-buttons">
         <button
