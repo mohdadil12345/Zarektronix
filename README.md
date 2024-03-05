@@ -1,6 +1,6 @@
 # Zarektronix_Assignment
 Backend url :  https://zarektronix-1.onrender.com
-video : https://drive.google.com/file/d/16dQNAg496ye1VQYsOgb75Qxt2a_FIW_8/view?usp=sharing
+
 Welcome to the Zarektronix  assignment. 
 
 ## Table of Contents
@@ -71,4 +71,4 @@ npm start
 
 ## Usage
 
-- Visit the application in your web browser at http://localhost:8080 or the URL https://zarektronix.vercel.app/.
+- Visit the application in your web browser at http://localhost:8080 or the URL https://zarektronix.vercel.app/. or video : https://drive.google.com/file/d/16dQNAg496ye1VQYsOgb75Qxt2a_FIW_8/view?usp=sharing
