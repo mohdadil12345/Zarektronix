@@ -131,6 +131,7 @@ button {
   background: #212121;
   border-radius: 8px;
   color: #fff;
+  transition: 0.5s;
 
 }
 
