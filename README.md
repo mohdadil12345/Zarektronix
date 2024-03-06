@@ -22,6 +22,9 @@ Zarektronix is a assignment for the user signup
 
 - toast used for successfull
 - Registration handle through backend
+- user is able to registered when online
+- user is able to registered when offline
+- registered data stored in database when user back to online
 
 
 ## Screenshots
